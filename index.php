@@ -42,7 +42,7 @@ if (json_last_error() !== JSON_ERROR_NONE) {
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 	<meta name="description" content="" />
 	<meta name="author" content="" />
-	<title>Iflow Landing Page</title>
+	<title>JadE</title>
 	<!-- Favicon-->
 	<link rel="icon" type="image/x-icon" href="public/assets/favicon.ico" />
 	<!-- Core theme CSS (includes Bootstrap)-->
