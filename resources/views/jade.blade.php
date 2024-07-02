@@ -94,7 +94,28 @@ if (json_last_error() !== JSON_ERROR_NONE) {
 	</style>
 	<div style="height: 100%; ">
 		<nav class="main-header navbar navbar-expand navbar-orange navbar-light" style="margin-left: 175px;">
-			<ul class="navbar-nav">
+
+
+			<ul class="navbar-nav" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+				<li class="nav-item">
+					<span class="nav-link" data-widget="pushmenu" href="#">
+						<i class="fas fa-bars" style="color: white;">
+							<span style="font-size: 1.25rem; color: white;">
+								Landing Page Tiendas de IFLOW
+							</span>
+						</i>
+					</span>
+				</li>
+				<li class="user-footer">
+					<form method="POST" action="{{ route('logout') }}">
+						@csrf
+						<button type="submit" class="btn btn-xs btn-outline-warning" style="padding:5px; margin-right: 20px;">Logout</button> 
+					</form>
+				</li>
+			</ul>
+
+
+			<!--ul class="navbar-nav">
 				<li class="nav-item">
 					<span class="nav-link" data-widget="pushmenu" href="#">
 						<i class="fas fa-bars" style="color: white">
@@ -110,7 +131,7 @@ if (json_last_error() !== JSON_ERROR_NONE) {
 						<button type="submit">Logout</button>
 					</form>
 				</li>
-			</ul>
+			</ul-->
 		</nav>
 		<aside class="main-sidebar sidebar-light-warning" style="border-style: solid; border-color: lightgrey; width: 175px!important;">
 			<a href="home" style="background-color: black" class="brand-link logo-switch">

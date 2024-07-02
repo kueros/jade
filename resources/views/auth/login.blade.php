@@ -33,7 +33,7 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-6 left-half">
-			<img src="vendor/adminlte/dist/img/iflowEcommerceLogo.png" alt="Logo">
+			<img src="vendor/adminlte/dist/img/jade_logo.png" alt="Logo">
 		</div>
 		<div class="col-md-6 right-half">
 			<div class="card" style="width:90%;">
