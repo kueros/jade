@@ -4,11 +4,15 @@ error_reporting(0);
 #Se cargan los datos para conectar a la base de datos
 require_once("public/config/conexion.php");
 $i = 1;
+
+
 #Se traen desde la tabla landings los datos para armar el menú de acceso
 $sql = mysqli_query($con, "SELECT * FROM landings;");
 while ($row = mysqli_fetch_assoc($sql)) {
 	$data[] = $row;
 }
+
+var_dump($data);die();
 if (empty($data)) {
 	echo "<script>alert(\"Falta cargar las url's en la tabla landings.\")</script>";
 }
@@ -23,7 +27,7 @@ $response = file_get_contents($url);
 
 // Verificar si la solicitud fue exitosa
 if ($response === FALSE) {
-	die('Error al obtener los datos.');
+	die('Error al obtener los datos1.');
 }
 
 // Decodificar el JSON en un array asociativo

@@ -4,11 +4,14 @@ error_reporting(0);
 #Se cargan los datos para conectar a la base de datos
 require_once("config/conexion.php");
 $i = 1;
+
+
 #Se traen desde la tabla landings los datos para armar el menú de acceso
 $sql = mysqli_query($con, "SELECT * FROM landings;");
 while ($row = mysqli_fetch_assoc($sql)) {
 	$data[] = $row;
 }
+#var_dump($data);die();
 if (empty($data)) {
 	echo "<script>alert(\"Falta cargar las url's en la tabla landings.\")</script>";
 }
@@ -23,7 +26,28 @@ $response = file_get_contents($url);
 
 // Verificar si la solicitud fue exitosa
 if ($response === FALSE) {
-	die('Error al obtener los datos.');
+	#die('Error al obtener los datos.');
+	$response =
+				'{
+					"data": {
+						"exito": {
+							"tipo_orden": "Ordenes enviadas exitosamente",
+							"datos": 150
+						},
+						"entregadas": {
+							"tipo_orden": "Ordenes enviadas exitosamente",
+							"datos": 90
+						},
+						"transito": {
+							"tipo_orden": "Ordenes en transito",
+							"datos": 60
+						},
+						"no_procesadas": {
+							"no_procesadas": "Ordenes NO procesadas",
+							"datos": 200
+						}
+					}
+				}';
 }
 
 // Decodificar el JSON en un array asociativo
@@ -112,7 +136,7 @@ if (json_last_error() !== JSON_ERROR_NONE) {
 				</li>
 			</ul>
 		</nav>
-		<aside class="main-sidebar sidebar-light-warning" style="border-style: solid; border-color: lightgrey; width: 175px!important;">
+		<aside class="main-sidebar sidebar-light-warning" style="border-style: solid; border-color: lightgrey; width: 175px!important; scrollbar-width:none;">
 			<a href="home" style="background-color: black" class="brand-link logo-switch">
 				<img src="assets/img/logoIf.png" alt="Iflow Logo" class="brand-image-xs logo-xl" />
 			</a>
